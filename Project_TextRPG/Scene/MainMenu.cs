@@ -42,7 +42,10 @@ namespace Project_TextRPG
 
             
             Console.Write("▼");
-            
+
+            Console.SetCursorPosition(40, 28);
+            Console.WriteLine("방향키로 움직이고 z키를 눌러 선택하세요.");
+
         }
 
         public void Remove()
@@ -93,20 +96,22 @@ namespace Project_TextRPG
                         break;
                 }
 
-                if (choice == 1 && input.Key == ConsoleKey.Enter && gameStartable == false)
+                if (choice == 1 && input.Key == ConsoleKey.Z && gameStartable == false)
                 {
                     Console.SetCursorPosition(50, 26);
                     Console.WriteLine("\'들어가기에 앞서\'를 먼저 봐 주세요!");
                 }
-                if (choice == 0 && input.Key == ConsoleKey.Enter)
+                if (choice == 0 && input.Key == ConsoleKey.Z )
                 {
                     Environment.Exit(0);
                 }
-                if(choice == 2 && input.Key == ConsoleKey.Enter)
+                if(choice == 2 && input.Key == ConsoleKey.Z )
                 {
                     game.BeforeStart();
                     return;
                 }
+
+                Console.SetCursorPosition(0, 40);
             }
 
             
