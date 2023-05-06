@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Globalization;
 
 namespace Project_TextRPG
 {
@@ -11,10 +12,38 @@ namespace Project_TextRPG
     {
         static string textFile = File.ReadAllText(@"..\..\..\sprites.txt");
         string[] lines = textFile.Split(Environment.NewLine);
-      
-        
+        PlayerState playerState = new PlayerState();
+
         public Sprites()
         {
+        }
+
+        public void Clear()
+        {
+            for (int i = 0; i < 30; i++)
+            {
+                Console.SetCursorPosition(0, i);
+                Console.WriteLine(lines[105], textFile);
+                
+            }
+
+        }
+        public void Remove()
+        {
+            for (int i = 0; i < 23; i++)
+            {
+                Console.SetCursorPosition(0, i);
+                Console.WriteLine(lines[105], textFile);
+                Bar();
+            }
+
+        }
+        public void Bar()
+        {
+            Console.SetCursorPosition(5, 16);
+            Console.WriteLine($" _|  {playerState.name}  |_");
+            Console.SetCursorPosition(0, 17);
+            Console.WriteLine(lines[107], textFile);
         }
         public void Test()
         {
@@ -32,16 +61,77 @@ namespace Project_TextRPG
                 Console.WriteLine(lines[i], textFile);
                 j++;
             }
-            Console.SetCursorPosition(0, 60);
+            
         }
         public void TitleButton()
         {
-            for (int i = 93; i < 95; i++)
+            
+            for (int i = 93; i < 94; i++)
             {
                 Console.SetCursorPosition(30, 25);
                 Console.WriteLine(lines[i], textFile);
             }
-            Console.SetCursorPosition(0, 60);
+           
         }
+        public void Potato()
+        {
+
+            int j = 2;
+            for (int i = 63; i < 73; i++)
+            {
+                Console.SetCursorPosition(45, j);
+                Console.WriteLine(lines[i], textFile);
+                j++;
+            }
+            
+        }
+        public void SleepyingPotato()
+        {
+
+            int j = 2;
+            for (int i = 52; i < 62; i++)
+            {
+                Console.SetCursorPosition(45, j);
+                Console.WriteLine(lines[i], textFile);
+                j++;
+            }
+            
+        }
+        public void SpeechBubbleForPotato()
+        {
+  
+            int j = 2;
+            for (int i = 98; i < 104; i++)
+            {
+                Console.SetCursorPosition(70, j);
+                Console.WriteLine(lines[i], textFile);
+                j++;
+            }
+           
+        }
+        public void Crown()
+        {
+            int j = 0;
+            for (int i = 95; i < 97; i++)
+            {
+                Console.SetCursorPosition(45, j);
+                Console.WriteLine(lines[i], textFile);
+                j++;
+            }
+        }
+
+        public void Fight()
+        {
+            Remove();
+            int j = 4;
+            for (int i = 109; i < 120; i++)
+            {
+                Console.SetCursorPosition(30, j);
+                Console.WriteLine(lines[i], textFile);
+                j++;
+            }
+            Console.SetCursorPosition(0, 23);
+        }
+
     }
 }

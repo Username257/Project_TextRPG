@@ -12,7 +12,8 @@ namespace Project_TextRPG
         private Scene scene;
         private MainMenu mainMenu;
         private BeforeStart beforeStart;
-
+        private PotatoSaying potatoSaying;
+        Sprites sprites = new Sprites();
         public void Run()
         {
             Init();
@@ -34,13 +35,13 @@ namespace Project_TextRPG
   
             mainMenu = new MainMenu(this);
             beforeStart = new BeforeStart(this);
+            potatoSaying = new PotatoSaying(this);
             scene = mainMenu;
         }
         private void Render()
         {
-            Console.Clear();
             scene.Render();
-            
+
         }
         private void Update()
         {
@@ -58,6 +59,10 @@ namespace Project_TextRPG
         public void BeforeStart()
         {
             scene = beforeStart;
+        }
+        public void PotatoSaying()
+        {
+            scene = potatoSaying;
         }
     }
 }

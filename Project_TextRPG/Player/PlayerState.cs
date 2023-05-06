@@ -8,7 +8,7 @@ namespace Project_TextRPG
 {
     internal class PlayerState
     {
-        public string name = "";
+        public string name = "디폴트";
         public int level = 0;
     }
 }
