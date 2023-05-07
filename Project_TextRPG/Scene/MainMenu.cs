@@ -78,6 +78,8 @@ namespace Project_TextRPG
                         Console.SetCursorPosition(75, 24);
                         Console.Write("▼");
                         break;
+                    default:
+                        break;
                 }
 
                 if (choice == 1 && input.Key == ConsoleKey.Z )

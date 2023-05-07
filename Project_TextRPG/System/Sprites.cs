@@ -130,8 +130,59 @@ namespace Project_TextRPG
                 Console.WriteLine(lines[i], textFile);
                 j++;
             }
-            Console.SetCursorPosition(0, 23);
+            Console.SetCursorPosition(0, 30);
+        }
+        public void PlayerSleep()
+        {
+            int j = 2;
+            for (int i = 121; i < 128; i++)
+            {
+                Console.SetCursorPosition(45, j);
+                Console.WriteLine(lines[i], textFile);
+                j++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
+        public void PlayerDefault()
+        {
+            int j = 2;
+            for (int i = 129; i < 136; i++)
+            {
+                Console.SetCursorPosition(45, j);
+                Console.WriteLine(lines[i], textFile);
+                j++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
+        public void PlayerBigEyed()
+        {
+            int j = 2;
+            for (int i = 137; i < 144; i++)
+            {
+                Console.SetCursorPosition(45, j);
+                Console.WriteLine(lines[i], textFile);
+                j++;
+            }
+            Console.SetCursorPosition(0, 30);
         }
 
+        public List<string> ForName()
+        {
+            string line = "";
+            for (int i = 145; i < 146; i++)
+            {
+                line = lines[i];
+            }
+
+            List<string> words = new List<string>();
+            for (int i = 0; i < 47; i++)
+            {
+                words.Add(line.Split(' ')[i]);
+            }
+
+            words = words.Distinct().ToList();
+            words.Sort((a, b) => new Random().NextDouble() >= 0.5 ? 1 : -1);
+            return words;
+        }
     }
 }

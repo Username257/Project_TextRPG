@@ -29,7 +29,7 @@ namespace Project_TextRPG
 
             if (input.Key == ConsoleKey.Z)
             {
-                game.BeforeStart();
+                game.Naming();
                 return;
             }
         }
