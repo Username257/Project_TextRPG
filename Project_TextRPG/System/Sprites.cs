@@ -12,7 +12,6 @@ namespace Project_TextRPG
     {
         static string textFile = File.ReadAllText(@"..\..\..\sprites.txt");
         string[] lines = textFile.Split(Environment.NewLine);
-        PlayerState playerState = new PlayerState();
 
         public Sprites()
         {
@@ -41,7 +40,7 @@ namespace Project_TextRPG
         public void Bar()
         {
             Console.SetCursorPosition(5, 16);
-            Console.WriteLine($" _|  {playerState.name}  |_");
+            Console.WriteLine($" _|  {PlayerState.name}  |_");
             Console.SetCursorPosition(0, 17);
             Console.WriteLine(lines[107], textFile);
         }

@@ -10,8 +10,10 @@ namespace Project_TextRPG
     {
         Sprites sprites = new Sprites();
         PlayerState playerState = new PlayerState();
-
         
+        bool goNextScene = false;
+
+
         public Naming(Game game) : base(game)
         {
             
@@ -68,6 +70,12 @@ namespace Project_TextRPG
 
                 if (input.Key == ConsoleKey.Z)
                     chooseWord();
+
+                if (goNextScene)
+                {
+                    game.SayMyName();
+                    return;
+                }
             }
 
         }
@@ -125,8 +133,8 @@ namespace Project_TextRPG
 
                 if (choice == 1 && input.Key == ConsoleKey.Z)
                 {
-                    playerState.name = words[i];
-                    game.SayMyName();
+                    PlayerState.name = words[i];
+                    goNextScene = true;
                     return;
                 }
 

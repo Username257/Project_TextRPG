@@ -11,7 +11,7 @@ namespace Project_TextRPG
         PrintTextOneByOne PTOBO = new PrintTextOneByOne();
         string str1 = "당신은 이 세계의 『용사』 . . .";
         string str2 = "(대충 마왕을 쓰러뜨리라는 내용)";
-        PlayerState playerState = new PlayerState();
+
         
         public void play()
         {
@@ -19,7 +19,7 @@ namespace Project_TextRPG
             PTOBO.print(str2, 100);
             Console.WriteLine("");
             Console.WriteLine("당신의 이름은?");
-            playerState.name = Console.ReadLine();
+            PlayerState.name = Console.ReadLine();
         }
     }
 }

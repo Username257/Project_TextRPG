@@ -9,7 +9,6 @@ namespace Project_TextRPG
     internal class SayMyName : Scene
     {
         Sprites sprites = new Sprites();
-        PlayerState playerState = new PlayerState();
         public SayMyName(Game game) : base(game)
         {
         }
@@ -18,6 +17,12 @@ namespace Project_TextRPG
             sprites.Remove();
             sprites.PlayerDefault();
             System.Threading.Thread.Sleep(1000);
+            Console.SetCursorPosition(5, 18);
+            Console.WriteLine("내 이름은...");
+            System.Threading.Thread.Sleep(1000);
+            Console.SetCursorPosition(20, 18);
+            Console.WriteLine($"{PlayerState.name}...!!!");
+            
         }
 
         public override void Update()
