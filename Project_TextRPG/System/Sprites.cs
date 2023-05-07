@@ -184,5 +184,47 @@ namespace Project_TextRPG
             words.Sort((a, b) => new Random().NextDouble() >= 0.5 ? 1 : -1);
             return words;
         }
+
+        public void Slime(int x, int y)
+        {
+            for (int i = 44; i < 51; i++)
+            {
+                Console.SetCursorPosition(x, y);
+                Console.WriteLine(lines[i], textFile);
+                y++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
+        public void SlimeJump(int x, int y)
+        {
+            for (int i = 147; i < 154; i++)
+            {
+                Console.SetCursorPosition(x, y);
+                Console.WriteLine(lines[i], textFile);
+                y++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
+
+        public void Walk1(int x, int y)
+        {
+            for (int i = 1; i < 8; i++)
+            {
+                Console.SetCursorPosition(x, y);
+                Console.WriteLine(lines[i], textFile);
+                y++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
+        public void Walk2(int x, int y)
+        {
+            for (int i = 9; i < 16; i++)
+            {
+                Console.SetCursorPosition(x, y);
+                Console.WriteLine(lines[i], textFile);
+                y++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace Project_TextRPG
         private BeforeStart beforeStart;
         private PotatoSaying potatoSaying;
         private Naming naming;
+        private SayMyName sayMyName;
         Sprites sprites = new Sprites();
         public void Run()
         {
@@ -38,6 +39,9 @@ namespace Project_TextRPG
             beforeStart = new BeforeStart(this);
             potatoSaying = new PotatoSaying(this);
             naming = new Naming(this);
+            sayMyName = new SayMyName(this);
+            
+
             scene = naming;
         }
         private void Render()
@@ -69,6 +73,10 @@ namespace Project_TextRPG
         public void Naming()
         {
             scene = naming;
+        }
+        public void SayMyName()
+        {
+            scene = sayMyName;
         }
     }
 }

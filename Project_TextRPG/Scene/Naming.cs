@@ -116,18 +116,21 @@ namespace Project_TextRPG
                     Console.Write(" ▼");
                 }
 
-                if (choice == 0 && input.Key == ConsoleKey.Z)
+                if(choice == 0 && input.Key == ConsoleKey.Z)
                 {
                     i++;
                     if (i == 46)
                         i = 0;
                 }
 
-                    if (choice == 1 && input.Key == ConsoleKey.Z)
+                if (choice == 1 && input.Key == ConsoleKey.Z)
                 {
                     playerState.name = words[i];
-                    Console.WriteLine("이제 다음 씬으로 넘어가야함");
+                    game.SayMyName();
+                    return;
                 }
+
+                input = new ConsoleKeyInfo('P', ConsoleKey.P, false, false, false);
             }
         }
     }
