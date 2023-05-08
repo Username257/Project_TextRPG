@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,29 @@ namespace Project_TextRPG
         private PotatoSaying potatoSaying;
         private Naming naming;
         private SayMyName sayMyName;
+        private Field field;
+        private PotatoBattle potatoBattle;
+       
         Sprites sprites = new Sprites();
+        public Stopwatch watch = System.Diagnostics.Stopwatch.StartNew();
+
         public void Run()
         {
+
             Init();
             while (isRunning)
             {
-                Render();
-                Update();
+                string time = watch.Elapsed.ToString();
+                int timeToInt = int.Parse(time.Substring(7, 1));
+                if (timeToInt > 5)
+                {
+                    Render();
+                    Update();
+                }
+                else
+                {
+
+                }
                 
             }
             Release();
@@ -40,9 +56,11 @@ namespace Project_TextRPG
             potatoSaying = new PotatoSaying(this);
             naming = new Naming(this);
             sayMyName = new SayMyName(this);
+            field = new Field(this);
+            potatoBattle = new PotatoBattle(this);
             
 
-            scene = naming;
+            scene = potatoBattle;
         }
         private void Render()
         {
@@ -78,5 +96,15 @@ namespace Project_TextRPG
         {
             scene = sayMyName;
         }
+        public void Field()
+        {
+            scene = field;
+        }
+        public void PotatoBattle()
+        {
+            scene = potatoBattle;
+        }
+
+       
     }
 }

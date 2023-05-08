@@ -47,7 +47,7 @@ namespace Project_TextRPG
             while (true)
             {
                 Console.SetCursorPosition(0, 30);
-                input = Console.ReadKey();
+                input = Console.ReadKey(true);
                 if (input.Key == ConsoleKey.LeftArrow)
                 {
                     choice--;

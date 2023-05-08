@@ -66,7 +66,7 @@ namespace Project_TextRPG
             while (true)
             {
                 Console.SetCursorPosition(0, 30);
-                ConsoleKeyInfo input = Console.ReadKey();
+                ConsoleKeyInfo input = Console.ReadKey(true);
 
                 if (input.Key == ConsoleKey.Z)
                     chooseWord();
@@ -102,7 +102,7 @@ namespace Project_TextRPG
                 Console.Write("【 결정 하기 】");
 
                 Console.SetCursorPosition(0, 30);
-                ConsoleKeyInfo input = Console.ReadKey();
+                ConsoleKeyInfo input = Console.ReadKey(true);
 
                 if (input.Key == ConsoleKey.RightArrow)
                     choice = 1;

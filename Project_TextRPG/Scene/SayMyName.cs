@@ -15,6 +15,11 @@ namespace Project_TextRPG
         public override void Render()
         {
             sprites.Remove();
+            
+        }
+
+        public override void Update()
+        {
             sprites.PlayerDefault();
             System.Threading.Thread.Sleep(1000);
             Console.SetCursorPosition(5, 18);
@@ -22,12 +27,14 @@ namespace Project_TextRPG
             System.Threading.Thread.Sleep(1000);
             Console.SetCursorPosition(20, 18);
             Console.WriteLine($"{PlayerState.name}...!!!");
-            
-        }
-
-        public override void Update()
-        {
-            ConsoleKeyInfo input = Console.ReadKey();
+            System.Threading.Thread.Sleep(1000);
+            sprites.Remove();
+            sprites.PlayerDefault();
+            Console.SetCursorPosition(5, 18);
+            Console.WriteLine("마왕을 죽이러 가야겠어");
+            System.Threading.Thread.Sleep(1000);
+            game.Field();
+            return;
         }
     }
 }

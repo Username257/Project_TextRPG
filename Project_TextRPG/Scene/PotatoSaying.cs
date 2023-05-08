@@ -15,9 +15,10 @@ namespace Project_TextRPG
         }
         public override void Render()
         {
+            sprites.Remove();
             sprites.Crown();
             sprites.SleepyingPotato();
-            sprites.Bar();
+    
         }
 
         public override void Update()

@@ -192,7 +192,7 @@ namespace Project_TextRPG
                 Console.WriteLine(lines[i], textFile);
                 y++;
             }
-            Console.SetCursorPosition(0, 30);
+            //Console.SetCursorPosition(0, 30);
         }
         public void SlimeJump(int x, int y)
         {
@@ -217,6 +217,16 @@ namespace Project_TextRPG
         }
         public void Walk2(int x, int y)
         {
+            for (int i = 155; i < 162; i++)
+            {
+                Console.SetCursorPosition(x, y);
+                Console.WriteLine(lines[i], textFile);
+                y++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
+        public void Walk3(int x, int y)
+        {
             for (int i = 9; i < 16; i++)
             {
                 Console.SetCursorPosition(x, y);
@@ -225,5 +235,27 @@ namespace Project_TextRPG
             }
             Console.SetCursorPosition(0, 30);
         }
+        public void Cloud(int x, int y)
+        {
+            for (int i = 74; i < 78; i++)
+            {
+                Console.SetCursorPosition(x, y);
+                Console.WriteLine(lines[i], textFile);
+                y++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
+
+        public void Tree(int x, int y)
+        {
+            for (int i = 79; i < 92; i++)
+            {
+                Console.SetCursorPosition(x, y);
+                Console.WriteLine(lines[i], textFile);
+                y++;
+            }
+            Console.SetCursorPosition(0, 30);
+        }
+
     }
 }
