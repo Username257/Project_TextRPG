@@ -33,8 +33,8 @@ namespace Project_TextRPG
             Console.SetCursorPosition(5, 18);
             Console.WriteLine("마왕을 죽이러 가야겠어");
             System.Threading.Thread.Sleep(1000);
+
             game.Field();
-            return;
         }
     }
 }

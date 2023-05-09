@@ -24,6 +24,8 @@ namespace Project_TextRPG
 
             sprites.Remove();
             SlimeMove();
+            Console.SetCursorPosition(5, 18);
+            Console.WriteLine("방향키를 눌러 슬라임에게 가자!");
 
 
             //값에 맞는 걷는 이미지 출력

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Project_TextRPG
 {
-    internal class PlayerState
+    internal class PotatoState
     {
-        public static string name = "???";
-        public static int level = 0;
         public static int hp = 100;
     }
 }

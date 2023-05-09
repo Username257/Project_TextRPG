@@ -18,6 +18,7 @@ namespace Project_TextRPG
         private SayMyName sayMyName;
         private Field field;
         private PotatoBattle potatoBattle;
+        private Win win;
        
         Sprites sprites = new Sprites();
         public Stopwatch watch = System.Diagnostics.Stopwatch.StartNew();
@@ -28,18 +29,10 @@ namespace Project_TextRPG
             Init();
             while (isRunning)
             {
-                string time = watch.Elapsed.ToString();
-                int timeToInt = int.Parse(time.Substring(7, 1));
-                if (timeToInt > 5)
-                {
-                    Render();
-                    Update();
-                }
-                else
-                {
 
-                }
-                
+                Render();
+                Update();
+                 
             }
             Release();
         }
@@ -58,9 +51,10 @@ namespace Project_TextRPG
             sayMyName = new SayMyName(this);
             field = new Field(this);
             potatoBattle = new PotatoBattle(this);
+            win = new Win(this);
             
 
-            scene = potatoBattle;
+            scene = mainMenu;
         }
         private void Render()
         {
@@ -103,6 +97,10 @@ namespace Project_TextRPG
         public void PotatoBattle()
         {
             scene = potatoBattle;
+        }
+        public void Win()
+        {
+            scene = win;
         }
 
        

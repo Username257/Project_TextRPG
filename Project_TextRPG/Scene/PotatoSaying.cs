@@ -59,6 +59,9 @@ namespace Project_TextRPG
             System.Threading.Thread.Sleep(1000);
 
             sprites.Fight();
+            System.Threading.Thread.Sleep(1000);
+
+            game.PotatoBattle();
         }
     }
 }
